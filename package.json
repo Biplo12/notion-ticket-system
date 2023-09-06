@@ -1,5 +1,6 @@
 {
-  "name": "ts-nextjs-tailwind-starter",
+  "name": "next-app",
+  "author": "Robert Sinski",
   "version": "0.1.0",
   "private": true,
   "scripts": {
