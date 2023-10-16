@@ -1,3 +1,7 @@
 export default interface IGlobalReducerInterface {
-  null: null;
+  ticketInfo: {
+    category: string;
+    workspace: string;
+    message: string;
+  };
 }

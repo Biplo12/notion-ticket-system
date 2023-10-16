@@ -5,20 +5,24 @@ import { RootState } from '@/store/store';
 import IGlobalReducerInterface from '@/interfaces/IGlobalReducerInterface';
 
 const initialState: IGlobalReducerInterface = {
-  null: null,
+  ticketInfo: {
+    category: '',
+    workspace: '',
+    message: '',
+  },
 };
 
 const slice = createSlice({
   name: 'slice',
   initialState,
   reducers: {
-    null: () => {
-      null;
+    setTicketInfo: (state, action) => {
+      state.ticketInfo = action.payload;
     },
   },
 });
 
 const { actions, reducer } = slice;
-export const { null: nullAction } = actions;
+export const { setTicketInfo } = actions;
 export const selectGlobal = (state: RootState) => state.global;
 export default reducer;
