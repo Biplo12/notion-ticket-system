@@ -2,9 +2,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'Next app',
-  siteName: 'Next app',
-  description: 'Next app',
+  title: 'Notion Ticket System',
+  siteName: 'Notion Ticket System',
+  description: 'Notion Ticket System',
   url: '',
   type: 'website',
   robots: 'follow, index',
