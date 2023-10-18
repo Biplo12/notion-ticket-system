@@ -22,7 +22,7 @@ const ticketInputs: TicketInput[] = [
     inputType: 'text',
   },
   {
-    label: 'Message for the support team',
+    label: 'Message',
     placeholder: 'This post fails on Facebook.',
     inputType: 'message',
   },

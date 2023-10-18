@@ -19,8 +19,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.13",
     "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-query": "^4.35.0",
+    "axios": "^1.5.1",
     "clsx": "^1.2.1",
     "lucide-react": "^0.260.0",
     "next": "^13.4.10",
