@@ -5,7 +5,7 @@ import FormHeader from '@/components/TicketForm/Partials/FormHeader';
 import FormInput from '@/components/TicketForm/Partials/FormInput';
 
 interface TicketInput {
-  label: string;
+  label: 'Category' | 'Workspace' | 'Message';
   placeholder: string;
   inputType: 'text' | 'number' | 'message';
 }
@@ -30,11 +30,13 @@ const ticketInputs: TicketInput[] = [
 
 const TicketForm: React.FC = (): JSX.Element => {
   return (
-    <div className='absolute left-1/2 top-1/2 flex h-[675px] w-[675px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-3 rounded-lg bg-gray-600 bg-opacity-0 shadow-lg'>
+    <div className='flex w-[675px] flex-col items-center justify-center gap-3 rounded-lg bg-gray-600 bg-opacity-0 shadow-lg'>
       <FormHeader />
       {ticketInputs.map((input, index) => (
         <FormInput
-          label={input.label}
+          label={
+            input.label.toLowerCase() as 'category' | 'workspace' | 'message'
+          }
           placeholder={input.placeholder}
           inputType={input.inputType}
           key={index}

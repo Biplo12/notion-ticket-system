@@ -2,18 +2,17 @@ import { useAppDispatch, useAppSelector } from '@/store/store-hooks';
 
 import { setTicketInfo } from '@/state/globalSlice';
 
-const useInputChange = (label: string) => {
+const useInputChange = (label: 'category' | 'workspace' | 'message') => {
   const dispatch = useAppDispatch();
-  const ticketDetails = useAppSelector((state) => state.global.ticketInfo) as {
-    [key: string]: string;
-  };
-  const ticketDetailsValue = ticketDetails[label.toLowerCase()];
+  const ticketDetails = useAppSelector((state) => state.global.ticketInfo);
+  const ticketDetailsValue =
+    ticketDetails[label.toLowerCase() as keyof typeof ticketDetails];
 
   const handleChangeTicketDetails = async (value: string) => {
     dispatch(
       setTicketInfo({
         ...ticketDetails,
-        [label?.toLowerCase()]: value,
+        [label.toLowerCase()]: value,
       })
     );
   };
