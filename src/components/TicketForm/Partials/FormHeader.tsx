@@ -18,7 +18,7 @@ const FormHeader: React.FC = (): JSX.Element => {
           Create an issue ticket
         </h1>
         <InfoIcon
-          className='h-6 w-6 cursor-pointer text-gray-200'
+          className='absolute right-3 top-3 h-6 w-6 cursor-pointer text-gray-200'
           onClick={handleOpenInfoModal}
         />
       </div>
