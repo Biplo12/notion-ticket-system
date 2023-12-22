@@ -5,20 +5,20 @@ import FormHeader from '@/components/TicketForm/Partials/FormHeader';
 import FormInput from '@/components/TicketForm/Partials/FormInput';
 
 interface TicketInput {
-  label: 'Category' | 'Workspace' | 'Message';
+  label: 'Title' | 'Category' | 'Message';
   placeholder: string;
   inputType: 'text' | 'number' | 'message';
 }
 
 const ticketInputs: TicketInput[] = [
   {
-    label: 'Category',
-    placeholder: 'Post failure',
+    label: 'Title',
+    placeholder: 'Facebook post fails',
     inputType: 'text',
   },
   {
-    label: 'Workspace',
-    placeholder: 'TinyKiwi',
+    label: 'Category',
+    placeholder: 'Social Media',
     inputType: 'text',
   },
   {
@@ -34,9 +34,7 @@ const TicketForm: React.FC = (): JSX.Element => {
       <FormHeader />
       {ticketInputs.map((input, index) => (
         <FormInput
-          label={
-            input.label.toLowerCase() as 'category' | 'workspace' | 'message'
-          }
+          label={input.label.toLowerCase() as 'title' | 'category' | 'message'}
           placeholder={input.placeholder}
           inputType={input.inputType}
           key={index}

@@ -7,8 +7,8 @@ import { TTicketInfo } from '@/interfaces/IGlobalReducerInterface';
 
 const initialState: IGlobalReducerInterface = {
   ticketInfo: {
+    title: '',
     category: '',
-    workspace: '',
     message: '',
   },
   ticketStatus: 'idle',

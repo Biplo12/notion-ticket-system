@@ -14,6 +14,30 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const openAiPrompt = `I will give u a category and description for a issue ticket that user submitted. You need to give me the urgency of the ticket. From Low to High.`;
 
+    const openAiResponse = await fetch(
+      'https://api.openai.com/v1/engines/davinci/completions',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${OPEN_AI_KEY}`,
+        },
+        body: JSON.stringify({
+          prompt: openAiPrompt,
+          max_tokens: 100,
+          temperature: 0.9,
+          top_p: 1,
+          n: 1,
+          stream: false,
+          logprobs: null,
+          stop: ['\n'],
+        }),
+      }
+    );
+
+    const openAiData = await openAiResponse.json();
+    console.log(openAiData);
+
     const response = await notion.pages.create({
       parent: {
         database_id: NOTION_DATABASE_ID as string,

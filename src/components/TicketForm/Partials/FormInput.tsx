@@ -5,7 +5,7 @@ import useInputChange from '@/hooks/useInputChange';
 import { useAppSelector } from '@/store/store-hooks';
 
 interface FormInputProps {
-  label: 'category' | 'workspace' | 'message';
+  label: 'title' | 'category' | 'message';
   inputType: 'text' | 'number' | 'message';
   placeholder: string;
   isRequired?: boolean;

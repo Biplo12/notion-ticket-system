@@ -1,6 +1,6 @@
 export type TTicketInfo = {
+  title: string;
   category: string;
-  workspace: string;
   message: string;
 };
 

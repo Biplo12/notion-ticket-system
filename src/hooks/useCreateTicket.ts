@@ -17,8 +17,8 @@ const handleCreateTicket = async (
     toast.success('Ticket Created Successfully');
     dispatch(
       setTicketInfo({
+        title: '',
         category: '',
-        workspace: '',
         message: '',
       })
     );

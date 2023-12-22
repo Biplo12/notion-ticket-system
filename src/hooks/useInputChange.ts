@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from '@/store/store-hooks';
 
 import { setTicketInfo } from '@/state/globalSlice';
 
-const useInputChange = (label: 'category' | 'workspace' | 'message') => {
+const useInputChange = (label: 'title' | 'category' | 'message') => {
   const dispatch = useAppDispatch();
   const ticketDetails = useAppSelector((state) => state.global.ticketInfo);
   const ticketDetailsValue =
