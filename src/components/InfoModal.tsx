@@ -10,18 +10,18 @@ const InfoModal: React.FC = (): JSX.Element => {
     dispatch(setInfoModalStatus(false));
   };
   return (
-    <div className='fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50  text-white'>
-      <div className='relative flex h-[400px] w-[550px] flex-col items-center justify-center gap-3 rounded-lg border border-white bg-gray-900 p-8 shadow-lg'>
+    <div className='fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50  p-3 text-white'>
+      <div className='relative flex h-auto min-h-[300px] w-[550px] flex-col items-center justify-center gap-3 rounded-lg border border-white bg-gray-900 p-6 pt-12 shadow-lg'>
         <X
-          className='absolute right-3 top-3 h-6 w-6 cursor-pointer'
+          className='absolute right-3 top-3 h-6 w-6 cursor-pointer transition-all duration-150 ease-linear hover:text-gray-400'
           onClick={handleCloseInfoModal}
         />
-        This application is a demo of a simple CRUD application using React,
-        Redux, Typescript, TailwindCSS, Notion API, and OpenAI API. You can
-        create a ticket and then the ticket will be sent to the Notion database.
-        And it will create a item in TODO list. The ticket will be processed by
-        the OpenAI API and then the urgency and priority will be appended to the
-        ticket in the Notion database.
+        <p>
+          This application is a demo of a simple CRUD application using React,
+          Redux, Typescript, TailwindCSS, Notion API. You can create a ticket by
+          providing a title, category, and description. Then the ticket will be
+          sent to the Notion database. And it will create a item in TODO list.
+        </p>
       </div>
     </div>
   );
